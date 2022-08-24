@@ -215,4 +215,205 @@ export const menu = [
         category: 'drinks',
         favorite: false
     },
+    {
+        id: 29,
+        name: 'Френч Фрайз',
+        img: 'https://mcdonalds.az/images/40b3007ef474215e514f44edc6a6eb45.png',
+        price: 5,
+        category: 'snacks',
+        favorite: false
+    },
+    {
+        id: 30,
+        name: 'Картофель по-деревенски',
+        img: 'https://mcdonalds.az/images/954f79cf35a4bdbfa2c11a47eb8e73bb.png',
+        price: 5,
+        category: 'snacks',
+        favorite: false
+    },
+    {
+        id: 31,
+        name: 'Луковые кольца',
+        img: 'https://mcdonalds.az/images/52ccdb7a70ebe633f9d3e97f441ad228.png',
+        price: 5,
+        category: 'snacks',
+        favorite: false
+    },
+    {
+        id: 32,
+        name: '>Креветки',
+        img: 'https://mcdonalds.az/images/48252145a70b67c32dd7a54467cafe69.png',
+        price: 5,
+        category: 'snacks',
+        favorite: false
+    },
+    {
+        id: 33,
+        name: 'Чикен  Макнаггетс',
+        img: 'https://mcdonalds.az/images/c773c5413edd64f97dd46d3968f7cbc4.png',
+        price: 5,
+        category: 'snacks',
+        favorite: false
+    },
+    {
+        id: 34,
+        name: 'Куриные крылышки',
+        img: 'https://mcdonalds.az/images/8cccda6c4845e01729a000996cd56bab.png',
+        price: 5,
+        category: 'snacks',
+        favorite: false
+    },
+    {
+        id: 35,
+        name: 'McFlurry™ Орео',
+        img: 'https://mcdonalds.az/images/f5114271ff7c36b4fdd23eacb76bee0e.png',
+        price: 5,
+        category: 'deserts',
+        favorite: false
+    },
+    {
+        id: 36,
+        name: 'Орео Шейк',
+        img: 'https://mcdonalds.az/images/d9ca7abec928b2cb6654888434051e63.png',
+        price: 5,
+        category: 'deserts',
+        favorite: false
+    },
+    {
+        id: 37,
+        name: 'McFlurry™ (Карамель)',
+        img: 'https://mcdonalds.az/images/f84855b6df923e1cfda1b7383a5e23e9.png',
+        price: 5,
+        category: 'deserts',
+        favorite: false
+    },
+    {
+        id: 38,
+        name: 'McFlurry™ (Клубника)',
+        img: 'https://mcdonalds.az/images/f57e849013baf0e8433d2f5ac35f7c8e.png',
+        price: 5,
+        category: 'deserts',
+        favorite: false
+    },
+    {
+        id: 39,
+        name: 'McFlurry™ (Kit-Kat)',
+        img: 'https://mcdonalds.az/images/74cf05910e2dd1abd249a7761bf2b894.png',
+        price: 5,
+        category: 'deserts',
+        favorite: false
+    },
+    {
+        id: 40,
+        name: 'МакСандей (Карамель)',
+        img: 'https://mcdonalds.az/images/2f8b225e848ccf153ed6412ac5135f20.png',
+        price: 5,
+        category: 'deserts',
+        favorite: false
+    },
+    {
+        id: 41,
+        name: 'МакСандей (Шоколад)',
+        img: 'https://mcdonalds.az/images/5bded50de8da35c6aa1900dfb2a80840.png',
+        price: 5,
+        category: 'deserts',
+        favorite: false
+    },
+    {
+        id: 42,
+        name: 'МакСандей (Клубника)',
+        img: 'https://mcdonalds.az/images/326b6aee3fb376c80e8268d6ffb5e709.png',
+        price: 5,
+        category: 'deserts',
+        favorite: false
+    },
+    {
+        id: 43,
+        name: 'Молочный Коктейль (Клубника)',
+        img: 'https://mcdonalds.az/images/a945151d11a1769d11edf5a863a4d80d.png',
+        price: 5,
+        category: 'deserts',
+        favorite: false
+    },
+    {
+        id: 44,
+        name: 'Молочный Коктейль (Шоколад)',
+        img: 'https://mcdonalds.az/images/f542531b5af6140e993ee2b6ba323b5a.png',
+        price: 5,
+        category: 'deserts',
+        favorite: false
+    },
+    {
+        id: 45,
+        name: 'Молочный Коктейль (Ваниль)',
+        img: 'https://mcdonalds.az/images/938cac24950af98faf1a584d5ac43182.png',
+        price: 5,
+        category: 'deserts',
+        favorite: false
+    },
+    {
+        id: 46,
+        name: 'Маффин (Банан)',
+        img: 'https://mcdonalds.az/images/ad21928c99a795348d4e3bc3e9d28c92.png',
+        price: 5,
+        category: 'deserts',
+        favorite: false
+    },
+    {
+        id: 47,
+        name: 'Маффин (Черная Смородина)',
+        img: 'https://mcdonalds.az/images/e8d52a14515a16f9ce316016049d4866.png',
+        price: 5,
+        category: 'deserts',
+        favorite: false
+    },
+    {
+        id: 48,
+        name: 'Маффин (Шоколад)',
+        img: 'https://mcdonalds.az/images/aa25c57a931e829ac71be160ce7607c6.png',
+        price: 5,
+        category: 'deserts',
+        favorite: false
+    },
+    {
+        id: 49,
+        name: 'Маффин (Шоколад и пломбир)',
+        img: 'https://mcdonalds.az/images/1d6b3db8a287b26ac282623aaa8176c6.jpg',
+        price: 5,
+        category: 'deserts',
+        favorite: false
+    },
+    {
+        id: 50,
+        name: 'Фруктовый пирожок',
+        img: 'https://mcdonalds.az/images/ae08184c9dccdfc4358a448392989e59.png',
+        price: 5,
+        category: 'deserts',
+        favorite: false
+    },
+    {
+        id: 51,
+        name: 'Фруктовый пирожок (Вишня)',
+        img: 'https://mcdonalds.az/images/3bf1dfaf956c624b82e59d8d90aee663.png',
+        price: 5,
+        category: 'deserts',
+        favorite: false
+    },
+    {
+        id: 52,
+        name: 'Шоколадный Торт',
+        img: 'https://mcdonalds.az/images/04c4c565e852ef5f65f6cf2bac33b283.png',
+        price: 5,
+        category: 'deserts',
+        favorite: false
+    },
+    {
+        id: 53,
+        name: 'Конус Мороженное',
+        img: 'https://mcdonalds.az/images/cc7701eb95778899fdb0100b76ddce9e.png',
+        price: 5,
+        category: 'deserts',
+        favorite: false
+    },
+    
 ]

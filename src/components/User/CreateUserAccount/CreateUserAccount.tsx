@@ -84,7 +84,9 @@ const CreateUserAccount: React.FC = () => {
           }
         />
         <Space>
-          <Button onClick={userRegistrationHandler} type="primary">Sign Up</Button>
+          <Link to="/user">
+            <Button onClick={userRegistrationHandler} type="primary">Sign Up</Button>
+          </Link>
           <Link to="/user">
             <Button>Back</Button>
           </Link>

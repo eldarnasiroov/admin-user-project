@@ -14,7 +14,7 @@ interface IInitialState {
     favorite: IMenu[];
 }
 const initialState: IInitialState = {
-    menu: [],
+    menu: menu,
     favorite: []
 }
 
@@ -25,6 +25,7 @@ const menuSlice = createSlice({
       downloadData: (state) => {
         menu.map(prod => {
           state.menu.push(prod);
+          return state;
         });
       },
       showFavorite: (state) => {
@@ -35,9 +36,13 @@ const menuSlice = createSlice({
           return prod;
         })
       },
+      clearMenu: (state) => {
+        state.favorite = [];
+        state.menu = [];
+      }
 
     }
 });
 
 export default menuSlice.reducer;
-export const { showFavorite, downloadData } = menuSlice.actions;
+export const { showFavorite, clearMenu } = menuSlice.actions;
