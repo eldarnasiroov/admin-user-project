@@ -62,6 +62,9 @@ const dispatch = useAppDispatch();
         <Route path="/profile" element={<UserProfile />}/>
       </Routes>
     </div>
+    <div className="footer">
+      <h1 style={{color: 'white'}}>FOOTER</h1>
+    </div>
     </div>
   )
 };

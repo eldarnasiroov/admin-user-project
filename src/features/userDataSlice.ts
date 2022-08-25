@@ -12,7 +12,8 @@ const initialState: IUserInitialState = {
       password: "",
       permission: false,
       cart: [],
-      favorites: []
+      favorites: [],
+      totalPrice: 0
     }
   ],
 };
@@ -21,6 +22,7 @@ const userDataSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
+    // REGISTRATION
     userRegistration: (state, action: PayloadAction<IRegistrationDataPayload>) => {
       const userData = {
         id: uniqid(),
@@ -31,16 +33,17 @@ const userDataSlice = createSlice({
         permission: false,
         cart: [],
         favorites: [],
+        totalPrice: 0
       }
       state.usersData.push(userData);      
     },
-    // 1
+    // LOG IN
     userLogin: (state, action: PayloadAction<ILoginPayload>) => {
       state.usersData.map(user => {
        return user.permission = user.username.toUpperCase() === action.payload.username.toUpperCase() && user.password === action.payload.password ? true : false;
       });
     },
-    // 2
+    // LOG OUT
     userLogOut: (state) => {
       state.usersData.map(user => user.permission = false);
     },
@@ -69,6 +72,7 @@ const userDataSlice = createSlice({
             prod.totalPrice = prod.price * prod.count;
             return prod;
           });
+          user.totalPrice = user.cart.reduce((acc, currValue) =>  acc + Number(currValue.totalPrice), 0);
         }
         return state;
       });

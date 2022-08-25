@@ -1,0 +1,8 @@
+.menu_products_container {
+    padding: 0 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+}

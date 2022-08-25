@@ -40,6 +40,7 @@ export interface IUsersData {
   cart: IProducts[];
   favorites: IProductsPayload[];
   permission: boolean;
+  totalPrice: number
 }
 
 export interface IUserInitialState {
