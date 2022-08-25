@@ -69,3 +69,33 @@ export type ProductType = {
   category: string;
   favorite: boolean;
 }
+export type ProductTypeInCart = {
+  id: number;
+  name: string;
+  img: string;
+  price: number;
+  category: string;
+  favorite: boolean;
+  count: number;
+  totalPrice: number | null;
+};
+
+export interface IProductsUserMain {
+  id: number;
+  name: string;
+  img: string;
+  price: number;
+  category: string;
+  favorite: boolean;
+}
+export interface IUsersDataUserMain {
+  id: string;
+  firstName: string;
+  lastName: string;
+  username: string;
+  password: string;
+  cart: IProductsUserMain[];
+  favorites: IProductsUserMain[];
+  permission: boolean;
+}
+export type UserDataType = IUsersDataUserMain | undefined

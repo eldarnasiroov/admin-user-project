@@ -67,8 +67,6 @@ const userDataSlice = createSlice({
           user.cart = cartCopy.filter(elem => elem.id !== 0)
           user.cart.map(prod => {
             prod.totalPrice = prod.price * prod.count;
-            console.log(prod.totalPrice);
-            
             return prod;
           });
         }

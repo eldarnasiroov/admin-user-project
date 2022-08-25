@@ -1,5 +1,5 @@
 import { useAppDispatch } from "../../../../hook";
-import { ShoppingCartOutlined, LogoutOutlined, InfoCircleOutlined, HeartOutlined, UserOutlined } from '@ant-design/icons';
+import { ShoppingCartOutlined, LogoutOutlined, HeartOutlined, UserOutlined } from '@ant-design/icons';
 import './UserMainPage.css';
 import { userLogOut } from "../../../../features/userDataSlice";
 import { Dropdown, Menu} from "antd";
@@ -7,28 +7,8 @@ import { Link, Route, Routes } from "react-router-dom";
 import UserProfile from "./UserProfile/UserProfile";
 import UserCartCardsContainer from "./UserCart/UserCartCardsContainer/UserCartCardsContainer";
 import UserFavoritesCardsContainer from "./UserFavorites/UserFavoritesCardsContainer/UserFavoritesCardsContainer";
-import UserProductsCardsContainer from "./CategoriesContainer/UserProductsCardsContainer/UserProductsCardsContainer";
 import CategoriesContainer from "./CategoriesContainer/CategoriesContainer";
-
-interface IProducts {
-  id: number;
-  name: string;
-  img: string;
-  price: number;
-  category: string;
-  favorite: boolean;
-}
-interface IUsersData {
-  id: string;
-  firstName: string;
-  lastName: string;
-  username: string;
-  password: string;
-  cart: IProducts[];
-  favorites: IProducts[];
-  permission: boolean;
-}
-type UserDataType = IUsersData | undefined
+import { UserDataType } from "../../../../features/types";
 
 const UserMenu = ({userData}: {userData: UserDataType}) => {
 const dispatch = useAppDispatch();

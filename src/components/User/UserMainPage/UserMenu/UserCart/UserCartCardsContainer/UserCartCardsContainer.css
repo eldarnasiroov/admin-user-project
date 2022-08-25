@@ -1,0 +1,34 @@
+.cart_main_container {
+    width: 100%;
+    /* margin-top: 100px; */
+    padding: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.order_info {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(80, 35, 20);
+    height: 80px;
+    z-index: 2;
+}
+.order_info_item {
+    margin-top: 30px;
+    color: rgb(245, 235, 220);
+    width: 200px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 1.5em;
+}
+.user_cart_cards_container {
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}

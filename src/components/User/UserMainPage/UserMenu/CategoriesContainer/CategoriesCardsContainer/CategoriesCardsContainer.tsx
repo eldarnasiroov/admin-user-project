@@ -1,13 +1,14 @@
 import { useAppSelector } from '../../../../../../hook';
 import CategoriesCard from '../CategoriesCard/CategoriesCard';
 import './CategoriesCardsContainer.css';
+import uniqid from 'uniqid';
 
 const CategoriesCardsContainer = () => {
     const categories = useAppSelector(state => state.menu.categories);
 
     return (
         <div className='categories_cards_container'>
-            {categories.map(categ => <CategoriesCard category={categ} />)}
+            {categories.map(categ => <CategoriesCard key={uniqid()} category={categ} />)}
         </div>
     )
 }

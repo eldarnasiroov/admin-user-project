@@ -1,13 +1,11 @@
-import { useAppSelector } from '../../../../../../hook';
-import UserProductCard from '../../UserProducts/UserProductCard/UserProductCard';
+import { useAppSelector } from '../../../../../../../hook';
+import UserProductCard from '../UserProductCard/UserProductCard';
 import './UserProductsCardsContainer.css';
 import uniqid from 'uniqid';
 
 const UserProductsCardsContainer = ({name}: {name: string}) => {
     const menu = useAppSelector((state) => state.menu.menu);
-    const sortedMenu = menu.filter(elem => elem.category === name);
-    console.log(sortedMenu);
-    
+    const sortedMenu = menu.filter(elem => elem.category === name);    
 
     return (
         <div className='all_menu_container'>

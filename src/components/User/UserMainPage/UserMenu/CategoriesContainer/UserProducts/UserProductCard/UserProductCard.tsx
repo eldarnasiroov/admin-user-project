@@ -1,10 +1,10 @@
-import { Button, Space } from 'antd';
+import { Button } from 'antd';
 import './UserProductCard.css';
-import { ShoppingCartOutlined, StarFilled, StarOutlined, MinusCircleOutlined, PlusCircleOutlined, HeartOutlined, HeartFilled } from '@ant-design/icons';
-import { useAppDispatch, useAppSelector } from '../../../../../../hook';
-import { userAddToCart, userAddToFavorites } from '../../../../../../features/userDataSlice';
+import { ShoppingCartOutlined, MinusCircleOutlined, PlusCircleOutlined, HeartOutlined, HeartFilled } from '@ant-design/icons';
+import { useAppDispatch, useAppSelector } from '../../../../../../../hook';
+import { userAddToCart, userAddToFavorites } from '../../../../../../../features/userDataSlice';
 import { useState } from 'react';
-import { ProductType } from '../../../../../../features/types';
+import { ProductType } from '../../../../../../../features/types';
 
 const UserProductCard = ({product}: {product: ProductType}) => {
     const dispatch = useAppDispatch();

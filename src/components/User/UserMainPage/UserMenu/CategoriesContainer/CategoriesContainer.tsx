@@ -1,8 +1,6 @@
 import './CategoriesContainer.css';
-import { useAppSelector } from '../../../../../hook';
-import CategoriesCard from './CategoriesCard/CategoriesCard';
 import { Route, Routes } from 'react-router-dom';
-import UserProductsCardsContainer from './UserProductsCardsContainer/UserProductsCardsContainer';
+import UserProductsCardsContainer from './UserProducts/UserProductsCardsContainer/UserProductsCardsContainer';
 import CategoriesCardsContainer from './CategoriesCardsContainer/CategoriesCardsContainer';
 
 const CategoriesContainer = () => {

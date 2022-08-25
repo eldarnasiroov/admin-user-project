@@ -1,8 +1,9 @@
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ICategory } from '../../../../../../features/types';
 import './CategoriesCard.css';
 
 const CategoriesCard = ({category}: {category: ICategory}) => {
+
     return (
         <>
             <Link to={category.name}>
