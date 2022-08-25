@@ -9,6 +9,7 @@ type ProductType = {
   category: string;
   favorite: boolean;
   count: number;
+  totalPrice: number | null;
 };
 
 const UserCart = ({ product }: { product: ProductType }) => {
@@ -17,6 +18,7 @@ const UserCart = ({ product }: { product: ProductType }) => {
       <img src={product.img} alt={product.category} />
       <div>{product.name}</div>
       <div>{product.count}</div>
+      <div>{product.totalPrice + ' манат'}</div>
       <Space>
         <Button type='primary' icon={<DeleteOutlined />}></Button>
         </Space>

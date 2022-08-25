@@ -1,53 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import uniqid from 'uniqid';
-interface IProducts {
-  id: number;
-  name: string;
-  img: string;
-  price: number;
-  category: string;
-  favorite: boolean;
-  count: number;
-}
-interface IProductsPayload {
-  id: number;
-  name: string;
-  img: string;
-  price: number;
-  category: string;
-  favorite: boolean;
-  save: boolean;
-}
+import { ILoginPayload, IProducts, IProductsPayload, IRegistrationDataPayload, IUserInitialState } from "./types";
 
-  
-
-interface IUsersData {
-  id: string;
-  firstName: string;
-  lastName: string;
-  username: string;
-  password: string;
-  cart: IProducts[];
-  favorites: IProductsPayload[];
-  permission: boolean;
-}
-
-interface IInitialState {
-  usersData: IUsersData[];
-}
-interface ILoginPayload {
-  username: string;
-  password: string;
-}
-interface IRegistrationDataPayload {
-  firstName: string;
-  lastName: string;
-  username: string;
-  password: string;
-  verificationPassword: string;
-}
-
-const initialState: IInitialState = {
+const initialState: IUserInitialState = {
   usersData: [
     {
       id: '1',
@@ -79,14 +34,17 @@ const userDataSlice = createSlice({
       }
       state.usersData.push(userData);      
     },
+    // 1
     userLogin: (state, action: PayloadAction<ILoginPayload>) => {
       state.usersData.map(user => {
        return user.permission = user.username.toUpperCase() === action.payload.username.toUpperCase() && user.password === action.payload.password ? true : false;
       });
     },
+    // 2
     userLogOut: (state) => {
       state.usersData.map(user => user.permission = false);
     },
+    // ADD TO CART
     userAddToCart: (state, action: PayloadAction<IProducts>) => {
       state.usersData.map(user => {
         if (user.permission) {
@@ -107,10 +65,17 @@ const userDataSlice = createSlice({
             }
           }
           user.cart = cartCopy.filter(elem => elem.id !== 0)
+          user.cart.map(prod => {
+            prod.totalPrice = prod.price * prod.count;
+            console.log(prod.totalPrice);
+            
+            return prod;
+          });
         }
         return state;
       });
     },
+    // ADD TO FAVORITES
     userAddToFavorites: (state, action: PayloadAction<IProductsPayload>) => {
       state.usersData.map(user => {
         if (user.permission) {

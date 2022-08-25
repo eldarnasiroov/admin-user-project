@@ -1,0 +1,5 @@
+.categories_cards_container {
+    display: flex;
+    margin-top: 150px;
+    gap: 30px;
+}
