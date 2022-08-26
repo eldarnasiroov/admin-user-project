@@ -1,4 +1,4 @@
-import { Button } from 'antd';
+import { Button, message } from 'antd';
 import './UserProductCard.css';
 import { ShoppingCartOutlined, MinusCircleOutlined, PlusCircleOutlined, HeartOutlined, HeartFilled } from '@ant-design/icons';
 import { useAppDispatch, useAppSelector } from '../../../../../../../hook';
@@ -23,11 +23,25 @@ const UserProductCard = ({product}: {product: ProductType}) => {
     }
     const addToCartHandler = () => {
         dispatch(userAddToCart({...product, count, totalPrice: null}));
+        const config = {
+            content: `${product.name} добавлен в корзину!`,
+            icon: <ShoppingCartOutlined />
+        }
+        message.info(config);
         setCount(1);
     }
     const addToFavoritesHandler = () => {
         setSave(!save);
         dispatch(userAddToFavorites({...product, save:!save}));
+        const config = 
+        !currentUserFavoriteProduct?.save ? {
+            content: `${product.name} добавлен в избранное!`,
+            icon: <HeartFilled />
+        } : {
+            content: `${product.name} удален из избранного!`,
+            icon: <HeartOutlined />
+        }
+        message.info(config);
     }
 
     return (

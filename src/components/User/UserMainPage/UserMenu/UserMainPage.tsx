@@ -2,13 +2,15 @@ import { useAppDispatch } from "../../../../hook";
 import { ShoppingCartOutlined, LogoutOutlined, HeartOutlined, UserOutlined } from '@ant-design/icons';
 import './UserMainPage.css';
 import { userLogOut } from "../../../../features/userDataSlice";
-import { Dropdown, Menu} from "antd";
+import { Drawer, Dropdown, Menu} from "antd";
 import { Link, Route, Routes } from "react-router-dom";
 import UserProfile from "./UserProfile/UserProfile";
 import UserCartCardsContainer from "./UserCart/UserCartCardsContainer/UserCartCardsContainer";
 import UserFavoritesCardsContainer from "./UserFavorites/UserFavoritesCardsContainer/UserFavoritesCardsContainer";
 import CategoriesContainer from "./CategoriesContainer/CategoriesContainer";
 import { UserDataType } from "../../../../features/types/userTypes";
+import { useState } from "react";
+import Footer from "../../../Footer/Footer";
 
 const UserMenu = ({userData}: {userData: UserDataType}) => {
 const dispatch = useAppDispatch();
@@ -34,17 +36,27 @@ const dispatch = useAppDispatch();
       ]}
     />
   );
+  const [visible, setVisible] = useState(false);
+
+  const showDrawer = () => {
+    setVisible(true);
+  };
+
+  const onClose = () => {
+    setVisible(false);
+  };
 
   return (
     <div className="main_page_wrapper">
       <header className="user_header">
-      <Link  to='/user/main-page'>
-        <div className="burger_menu">
-          <div className="burger_menu_line"></div>
-          <div className="burger_menu_line"></div>
-          <div className="burger_menu_line"></div>
+      <div className="burger_menu" onClick={showDrawer}>
+            <div className="burger_menu_line"></div>
+            <div className="burger_menu_line"></div>
+            <div className="burger_menu_line"></div>
         </div>
-      </Link>
+        <Drawer title="User Panel" placement="left" onClose={onClose} visible={visible}>
+            <p>Some contents...</p>
+        </Drawer>
         <Link className="burger_king_logo" to='/user/main-page'>
           <img src="https://seeklogo.com/images/B/burger-king-new-2021-logo-F43BDE45C7-seeklogo.com.png" alt="bk-logo" width={55} height={55} />
         </Link>
@@ -62,9 +74,7 @@ const dispatch = useAppDispatch();
         <Route path="/profile" element={<UserProfile />}/>
       </Routes>
     </div>
-    <div className="footer">
-      <h1 style={{color: 'white'}}>FOOTER</h1>
-    </div>
+    <Footer />
     </div>
   )
 };

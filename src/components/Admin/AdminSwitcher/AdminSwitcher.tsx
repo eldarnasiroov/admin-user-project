@@ -6,7 +6,7 @@ import './AdminSwitcher.css';
 const AdminSwitcher = () => {
     const adminPermission = useAppSelector(state => state.admin.permission);
     return (
-        <div>
+        <div className="switcher">
             {adminPermission ? <AdminMainPage /> : <AdminError />}
         </div>
     )

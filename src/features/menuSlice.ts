@@ -8,7 +8,6 @@ const initialState: IMenuInitialState = {
     menu: menu,
     categories: categories
 }
-
 const menuSlice = createSlice({
     name: 'menu',
     initialState,
@@ -19,9 +18,12 @@ const menuSlice = createSlice({
           productToChange.name = action.payload.name ? action.payload.name : productToChange.name;
           productToChange.price = action.payload.price ? action.payload.price : productToChange.price;
         }
+      },
+      deleteProduct: (state, action: PayloadAction<{id: number}>) => {
+        state.menu = state.menu.filter(prod => prod.id !== action.payload.id);
       }
     }
 });
 
 export default menuSlice.reducer;
-export const { changeProductValues } = menuSlice.actions;
+export const { changeProductValues, deleteProduct } = menuSlice.actions;

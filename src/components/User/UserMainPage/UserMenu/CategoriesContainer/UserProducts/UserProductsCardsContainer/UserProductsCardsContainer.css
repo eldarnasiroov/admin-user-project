@@ -5,6 +5,7 @@
     align-items: center;
 }
 .all_menu_products_container {
+    width: 100%;
     padding: 30px 150px;
     display: flex;
     justify-content: space-between;
