@@ -9,7 +9,7 @@ const UserError: React.FC = () => {
 
     <Space direction="vertical">
       <div className="user_error_container">
-        <h1>ACCESS DENIED</h1>
+        <h1>USER ACCESS DENIED</h1>
       </div>
       <Link to="/user">
         <Button type="primary">Log In</Button>

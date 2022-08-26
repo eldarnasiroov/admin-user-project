@@ -1,18 +1,18 @@
-import { useAppDispatch } from "../../../../hook";
-import { ShoppingCartOutlined, LogoutOutlined, HeartOutlined, UserOutlined } from '@ant-design/icons';
-import './UserMainPage.css';
-import { userLogOut } from "../../../../features/userDataSlice";
-import { Dropdown, Menu} from "antd";
+import { Dropdown, Menu } from "antd";
 import { Link, Route, Routes } from "react-router-dom";
-import UserProfile from "./UserProfile/UserProfile";
-import UserCartCardsContainer from "./UserCart/UserCartCardsContainer/UserCartCardsContainer";
-import UserFavoritesCardsContainer from "./UserFavorites/UserFavoritesCardsContainer/UserFavoritesCardsContainer";
-import CategoriesContainer from "./CategoriesContainer/CategoriesContainer";
-import { UserDataType } from "../../../../features/types/userTypes";
+import { UserDataType } from "../../../features/types/userTypes";
+import { useAppDispatch } from "../../../hook";
+import { ShoppingCartOutlined, LogoutOutlined, HeartOutlined, UserOutlined } from '@ant-design/icons';
+import CategoriesContainer from "../../User/UserMainPage/UserMenu/CategoriesContainer/CategoriesContainer";
+import UserCartCardsContainer from "../../User/UserMainPage/UserMenu/UserCart/UserCartCardsContainer/UserCartCardsContainer";
+import UserFavoritesCardsContainer from "../../User/UserMainPage/UserMenu/UserFavorites/UserFavoritesCardsContainer/UserFavoritesCardsContainer";
+import UserProfile from "../../User/UserMainPage/UserMenu/UserProfile/UserProfile";
+import AdminProductsCardsContainer from "./AdminProducts/AdminProductsCardsContainer/AdminProductsCardsContainer";
+import { adminLogout } from "../../../features/adminDataSlice";
 
-const UserMenu = ({userData}: {userData: UserDataType}) => {
+
+const AdminMainPage = () => {
 const dispatch = useAppDispatch();
-
   const menuItems = (
     <Menu
       items={[
@@ -27,14 +27,14 @@ const dispatch = useAppDispatch();
           icon: <ShoppingCartOutlined />,
         },
         {
-          label: <Link onClick={() => {dispatch(userLogOut())}} to="/user">Log Out</Link>,
+          label: <Link onClick={() => dispatch(adminLogout())} to="/admin">Log Out</Link>,
           key: '3',
           icon: <LogoutOutlined />,
         },
       ]}
     />
   );
-
+      
   return (
     <div className="main_page_wrapper">
       <header className="user_header">
@@ -50,16 +50,13 @@ const dispatch = useAppDispatch();
         </Link>
         <Link to='profile' className="zaart" >
           <Dropdown.Button type="text" size="large" overlay={menuItems} placement="bottom" icon={<UserOutlined style={{color: 'rgb(245, 235, 220)'}} />}>
-            <div className="profile_button">{userData?.firstName + ' ' + userData?.lastName}</div>
+            <div className="profile_button">Admin</div>
           </Dropdown.Button>
         </Link> 
       </header>
     <div className="main_page_container">
       <Routes>
-        <Route path="/*" element={<CategoriesContainer />}/>
-        <Route path="/cart" element={<UserCartCardsContainer />}/>
-        <Route path="/favorites" element={<UserFavoritesCardsContainer />}/>
-        <Route path="/profile" element={<UserProfile />}/>
+        <Route path="/*" element={<AdminProductsCardsContainer />}/>
       </Routes>
     </div>
     <div className="footer">
@@ -69,4 +66,4 @@ const dispatch = useAppDispatch();
   )
 };
 
-export default UserMenu;
+export default AdminMainPage;

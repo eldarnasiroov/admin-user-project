@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   EyeInvisibleOutlined,
   EyeTwoTone,
@@ -8,8 +8,20 @@ import {
 import { Button, Input, Space, Tooltip, Typography } from "antd";
 import { Link } from "react-router-dom";
 import './AdminLogin.css';
+import { useAppDispatch } from "../../hook";
+import { adminLogin } from "../../features/adminDataSlice";
 
 const AdminLogin: React.FC = () => {
+  const dispatch = useAppDispatch()
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const adminLoginHandler = () => {
+    const loginData = {
+      username,
+      password
+    }
+    dispatch(adminLogin(loginData));
+  }
   return (
     <div className="admin_login_container">
       <Space direction="vertical">
@@ -17,6 +29,8 @@ const AdminLogin: React.FC = () => {
             <Typography.Title level={5}>Administrator</Typography.Title>
         </Typography>
         <Input
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           placeholder="Username"
           prefix={<UserOutlined className="site-form-item-icon" />}
           suffix={
@@ -26,29 +40,21 @@ const AdminLogin: React.FC = () => {
           }
         />
         <Input.Password
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
           iconRender={(visible) =>
             visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
           }
         />
         <Space>
-          <Button type="primary">Log In</Button>
+          <Link onClick={adminLoginHandler} to='/admin/main-page'>
+            <Button type="primary">Log In</Button>
+          </Link>
           <Link to="/">
             <Button>Back</Button>
           </Link>
         </Space>
-
-        {/* {Create admin account} */}
-
-        {/* <span>Don't have an account?</span>
-        <Space>
-        <Link to="/admin/create-account">
-          <Button type="primary">Create new account</Button>
-        </Link>
-        <Link to="/">
-          <Button>Back</Button>
-        </Link>
-        </Space> */}
       </Space>
     </div>
   );

@@ -4,7 +4,7 @@ import { ShoppingCartOutlined, MinusCircleOutlined, PlusCircleOutlined, HeartOut
 import { useAppDispatch, useAppSelector } from '../../../../../../../hook';
 import { userAddToCart, userAddToFavorites } from '../../../../../../../features/userDataSlice';
 import { useState } from 'react';
-import { ProductType } from '../../../../../../../features/types';
+import { ProductType } from '../../../../../../../features/types/userTypes';
 
 const UserProductCard = ({product}: {product: ProductType}) => {
     const dispatch = useAppDispatch();

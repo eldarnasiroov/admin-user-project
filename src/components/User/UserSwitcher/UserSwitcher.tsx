@@ -1,8 +1,8 @@
 import React from "react";
 import { useAppSelector } from "../../../hook";
-import UserError from "./UserError/UserError";
+import UserError from "../UserError/UserError";
 import "./UserSwitcher.css";
-import UserMainPage from "./UserMenu/UserMainPage";
+import UserMainPage from "../UserMainPage/UserMenu/UserMainPage";
 
 const UserSwitcher: React.FC = () => {
     const permission = useAppSelector((state) => state.user.usersData.find(user => user.permission));

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ICategory } from '../../../../../../features/types';
+import { ICategory } from '../../../../../../features/types/userTypes';
 import './CategoriesCard.css';
 
 const CategoriesCard = ({category}: {category: ICategory}) => {

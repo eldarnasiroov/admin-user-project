@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
+import adminDataSlice from "../features/adminDataSlice";
 import menuSlice from "../features/menuSlice";
 import userDataSlice from "../features/userDataSlice";
 
 const store = configureStore({
     reducer: {
         user: userDataSlice,
-        menu: menuSlice
+        menu: menuSlice,
+        admin: adminDataSlice
     }
 });
 

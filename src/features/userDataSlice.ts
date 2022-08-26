@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import uniqid from 'uniqid';
-import { ILoginPayload, IProducts, IProductsPayload, IRegistrationDataPayload, IUserInitialState } from "./types";
+import { ILoginPayload, IProducts, IProductsPayload, IRegistrationDataPayload, IUserInitialState } from "./types/userTypes";
 
 const initialState: IUserInitialState = {
   usersData: [
