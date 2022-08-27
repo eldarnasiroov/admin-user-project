@@ -48,3 +48,6 @@
 .admin_btns_container {
     margin-bottom: 15px;
 }
+.product_image {
+    object-fit: none;
+}

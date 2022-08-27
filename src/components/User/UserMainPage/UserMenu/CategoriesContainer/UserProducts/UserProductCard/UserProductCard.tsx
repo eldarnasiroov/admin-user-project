@@ -45,23 +45,23 @@ const UserProductCard = ({product}: {product: ProductType}) => {
     }
 
     return (
-        <div className='product_card_container'>
-            <img src={product.img} alt={product.category} />
-            <span className='product_name'>{product.name}</span>
+        <div className='user_product_card_container'>
+            <img className='user_product_image' src={product.img} alt={product.category} width={300} height={300} />
+            <span className='user_product_name'>{product.name}</span>
             <div>
-                <div className='add_to_cart_btns'>
-                    <div className='up_down_btns'>
+                <div className='user_add_to_cart_btns'>
+                    <div className='user_up_down_btns'>
                         <Button onClick={countDownHandler} icon={<MinusCircleOutlined style={{fontSize: '20px'}} />} ></Button>
-                        <div className='product_count'>{count}</div>
+                        <div className='user_product_count'>{count}</div>
                         <Button onClick={countUpHandler} icon={<PlusCircleOutlined style={{fontSize: '20px'}} />} ></Button>
                     </div>
                     <Button onClick={addToCartHandler} type='primary' icon={<ShoppingCartOutlined />}>В Корзину</Button>
                 </div>
-                <div className='product_price_container'>
+                <div className='user_product_price_container'>
                     <h3 className='product_price'>{product.price}</h3>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Azeri_manat_symbol.svg" alt="azn" width={25} height={20} />
                 </div>
-                <div className='favorite_button'>
+                <div className='user_favorite_button'>
                     <Button type='link' onClick={addToFavoritesHandler}  icon={currentUserFavoriteProduct ? <HeartFilled style={{ color: 'red', fontSize: '30px' }} /> : <HeartOutlined style={{ fontSize: '30px' }} />}></Button>
                 </div>
             </div>

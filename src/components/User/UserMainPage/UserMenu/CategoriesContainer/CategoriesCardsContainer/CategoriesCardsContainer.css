@@ -1,10 +1,10 @@
-.baw_container {
+.user_baw_container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 60px;
 }
-.our_menu_container {
+.user_our_menu_container {
     width: 1200px;
     height: 150px;
     background-color:rgb(80, 35, 20);
@@ -17,7 +17,7 @@
     font-family: 'DynaPuff', cursive;
     margin-top: 50px;
 }
-.categories_cards_container {
+.user_categories_cards_container {
     display: flex;
     margin-top: 30px;
     gap: 30px;

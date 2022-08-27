@@ -1,4 +1,4 @@
-.product_card_card {
+.user_product_card_card {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -10,16 +10,16 @@
     box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
     align-items: center;
 }
-.product_in_cart_container {
+.user_product_in_cart_container {
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 1.5em;
 }
-.product_values {
+.user_product_values {
     width: 110px;
     font-size: 1.5em;
     font-family: 'Yanone Kaffeesatz', sans-serif;
 }
-.product_values_container {
+.user_product_values_container {
     display: flex;
     gap: 5px;
     align-items: center;

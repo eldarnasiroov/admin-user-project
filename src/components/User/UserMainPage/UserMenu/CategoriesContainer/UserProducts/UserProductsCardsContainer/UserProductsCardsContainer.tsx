@@ -8,11 +8,11 @@ const UserProductsCardsContainer = ({name}: {name: string}) => {
     const sortedMenu = menu.filter(elem => elem.category === name);    
 
     return (
-        <div className='all_menu_container'>
-            <div className="menu_iscription_container">
-                <h1 className="menu_iscription">{name.toUpperCase()}</h1> 
+        <div className='user_all_menu_container'>
+            <div className="user_menu_iscription_container">
+                <h1 className="user_menu_iscription">{name.toUpperCase()}</h1> 
             </div>
-            <div className='all_menu_products_container'>
+            <div className='user_all_menu_products_container'>
                 {sortedMenu.map(prod => <UserProductCard key={uniqid()} product={prod} />)}
             </div>
         </div>

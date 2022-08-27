@@ -9,7 +9,7 @@ const UserSwitcher: React.FC = () => {
     const userData = useAppSelector(state => state.user.usersData.find(user => user.permission));
     
     return (
-      <div className="switcher">
+      <div className="user_switcher">
         {!permission ? <UserError /> : <UserMainPage userData={userData}/>}
       </div>
     );

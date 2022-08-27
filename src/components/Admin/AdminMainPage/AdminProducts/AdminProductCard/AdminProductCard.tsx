@@ -31,7 +31,7 @@ const AdminProductCard = ({product}: {product: ProductType}) => {
 
     return (
         <div className='product_card_container'>
-            <img src={product.img} alt={product.category} />
+            <img className='product_image' src={product.img} alt={product.category} width={300} height={300} />
             <span onClick={() => setNameInputDisabled(false)} className={nameInputDisabled ? 'product_name' : 'hidden'}>{product.name}</span>
             <input
                 className={nameInputDisabled ? 'hidden' : ''}

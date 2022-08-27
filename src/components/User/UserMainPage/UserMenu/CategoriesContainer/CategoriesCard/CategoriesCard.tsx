@@ -7,7 +7,7 @@ const CategoriesCard = ({category}: {category: ICategory}) => {
     return (
         <>
             <Link to={category.name}>
-                <div className='category_card'>
+                <div className='user_category_card'>
                     <img src={category.img} alt={category.name + '-image'} width={279} height={208} />
                     <h3>{category.title}</h3>
                 </div>

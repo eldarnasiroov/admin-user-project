@@ -1,4 +1,4 @@
-.main_page_wrapper {
+.user_main_page_wrapper {
   width: 100%;
   min-height: 100vh;
   margin: 0 auto;
@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: space-between;
 }
-.user_header {
+.user_user_header {
   width: 100%;
   height: 80px;
   background-color: rgb(245, 235, 220);
@@ -19,22 +19,22 @@
   align-items: center;
   z-index: 3;
 }
-.burger_menu {
+.user_burger_menu {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
 }
-.burger_menu:hover {
+.user_burger_menu:hover {
   cursor: pointer;
 }
-.burger_menu_line {
+.user_burger_menu_line {
   width: 30px;
   height: 4px;
   border-radius: 70px;
   background-color: rgb(80, 35, 20);
 }
-.burger_king_logo {
+.user_burger_king_logo {
   margin-left: 135px;
 }
 .zaart {
@@ -47,12 +47,12 @@
   background-color: rgb(80, 35, 20);
   z-index: 0;
 }
-.profile_button {
+.user_profile_button {
   font-size: 1em;
   color: rgb(245, 235, 220);
   font-weight: 800;
 }
-.menu_iscription_container {
+.user_menu_iscription_container {
   width: 100%;
   height: 200px;
   background-color: rgb(80, 35, 20);
@@ -60,14 +60,14 @@
   justify-content: center;
   align-items: center;
 }
-.menu_iscription {
+.user_menu_iscription {
   font-size: 4em;
   margin-top: 80px;
   color: white;
   text-transform: uppercase;
   font-family: 'DynaPuff', cursive;
 }
-.main_page_container {
+.user_main_page_container {
   min-width: 100%;
   margin: 25px auto;
   display: flex;

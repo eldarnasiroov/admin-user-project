@@ -3,7 +3,7 @@ import uniqid from 'uniqid';
 import { useAppSelector } from '../../../../../hook';
 import AdminProductCard from '../AdminProductCard/AdminProductCard';
 import { useState } from 'react';
-import { Input, Select, Modal, Button } from 'antd';
+import { Input, Select } from 'antd';
 import AdminAddProduct from '../../AdminAddProduct/AdminAddProduct';
 
 const AdminProductsCardsContainer = () => {
@@ -14,32 +14,18 @@ const AdminProductsCardsContainer = () => {
         return (
             elem.name.toUpperCase().includes(searchingProduct.toLocaleUpperCase()) &&
             elem.category.includes(selectedCategory)
-        );
-    } ));
-    
+            );
+          } ));
+
       const selectAfter = (
         <Select onSelect={(e: string) => setSelectedCategory(e)} defaultValue={''} className="select-after">
-          <Option value="">All</Option>
-          <Option value="burgers">Burgers</Option>
-          <Option value="snacks">Snacks</Option>
-          <Option value="drinks">Drinks</Option>
-          <Option value="deserts">Deserts</Option>
+          <Option value="">Все категории</Option>
+          <Option value="burgers">Бургеры</Option>
+          <Option value="snacks">Закуски</Option>
+          <Option value="drinks">Напитки</Option>
+          <Option value="deserts">Десерты</Option>
         </Select>
       );
-      const [isModalVisible, setIsModalVisible] = useState(false);
-
-      const showModal = () => {
-        setIsModalVisible(true);
-      };
-    
-      const handleOk = () => {
-        setIsModalVisible(false);
-      };
-    
-      const handleCancel = () => {
-        setIsModalVisible(false);
-      };
-          
 
     return (
         <div className='all_menu_container'>
@@ -49,12 +35,7 @@ const AdminProductsCardsContainer = () => {
             <div className='search_input'>
                 <Input onChange={(e) => setSearchingProduct(e.target.value)} addonAfter={selectAfter} defaultValue={searchingProduct} />
             </div>
-            <Button type="primary" onClick={showModal}>
-                Open Modal
-            </Button>
-            <Modal width={1000} title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                <AdminAddProduct /> 
-            </Modal>
+            <AdminAddProduct />
             <div className='all_menu_products_container'>
                 {menu.map(prod => <AdminProductCard key={uniqid()} product={prod} />)}
             </div>

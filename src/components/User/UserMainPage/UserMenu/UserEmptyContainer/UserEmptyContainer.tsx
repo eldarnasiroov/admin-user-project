@@ -2,7 +2,7 @@ import './UserEmptyContainer.css';
 
 const UserEmptyContainer = () => {
     return (
-        <div className='empty'>
+        <div className='user_empty'>
             Empty!
         </div>
     )

@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { categories } from "../mock-server/categories";
 import { menu } from "../mock-server/products";
 import { IChangedValues } from "./types/adminTypes";
-import { IMenuInitialState } from "./types/userTypes";
+import { IMenu, IMenuInitialState } from "./types/userTypes";
 
 const initialState: IMenuInitialState = {
     menu: menu,
@@ -21,9 +21,12 @@ const menuSlice = createSlice({
       },
       deleteProduct: (state, action: PayloadAction<{id: number}>) => {
         state.menu = state.menu.filter(prod => prod.id !== action.payload.id);
+      },
+      addProduct: (state, action: PayloadAction<IMenu>) => {
+        state.menu.unshift(action.payload);
       }
     }
 });
 
 export default menuSlice.reducer;
-export const { changeProductValues, deleteProduct } = menuSlice.actions;
+export const { changeProductValues, deleteProduct, addProduct } = menuSlice.actions;

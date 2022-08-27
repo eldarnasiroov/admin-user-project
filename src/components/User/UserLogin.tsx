@@ -52,7 +52,7 @@ const UserLogin: React.FC = () => {
         <Link to='main-page'>
           <Button onClick={userLoginHandler} type="primary">Log In</Button>
         </Link>
-        <div className="separator"></div>
+        <div className="user_separator"></div>
         <span>Don't have an account?</span>
         <Space>
           <Link to="create-account">
