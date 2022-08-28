@@ -49,7 +49,7 @@ const UserLogin: React.FC = () => {
             visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
           }
         />
-        <Link to='main-page'>
+        <Link to='/user/main-page'>
           <Button onClick={userLoginHandler} type="primary">Вход</Button>
         </Link>
         <div className="user_separator"></div>
@@ -59,7 +59,7 @@ const UserLogin: React.FC = () => {
             <Button type="primary">Создать новый аккаунт</Button>
           </Link>
           <Link to="/">
-            <Button>Назад</Button>
+            <Button>На главную</Button>
           </Link>
         </Space>
       </Space>
