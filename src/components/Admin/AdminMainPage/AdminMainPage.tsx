@@ -34,12 +34,12 @@ const dispatch = useAppDispatch();
 
 
   return (
-    <div className="main_page_wrapper">
-      <header className="user_header">
-        <div className="burger_menu" onClick={showDrawer}>
-            <div className="burger_menu_line"></div>
-            <div className="burger_menu_line"></div>
-            <div className="burger_menu_line"></div>
+    <div className="admin_main_page_wrapper">
+      <header className="admin_header">
+        <div className="admin_burger_menu" onClick={showDrawer}>
+            <div className="admin_burger_menu_line"></div>
+            <div className="admin_burger_menu_line"></div>
+            <div className="admin_burger_menu_line"></div>
         </div>
         <Drawer title="Admin Panel" placement="left" onClose={onClose} visible={visible}>
             <p>Some contents...</p>
@@ -49,11 +49,11 @@ const dispatch = useAppDispatch();
         </Link>
         <Link to='profile' className="zaart" >
           <Dropdown.Button type="text" size="large" overlay={menuItems} placement="bottom" icon={<UserOutlined style={{color: 'rgb(245, 235, 220)'}} />}>
-            <div className="profile_button">Admin</div>
+            <div className="admin_profile_button">Admin</div>
           </Dropdown.Button>
         </Link> 
       </header>
-    <div className="main_page_container">
+    <div className="admin_main_page_container">
       <Routes>
         <Route path="/*" element={<AdminProductsCardsContainer />}/>
       </Routes>

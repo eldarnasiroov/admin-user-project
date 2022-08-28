@@ -1,13 +1,14 @@
 .App {
-  width: 1320px;
+  width: 1250px;
   min-height: 100vh;
   text-align: center;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   margin: 0 auto;
-  background-color: rgb(245, 235, 220);
+  background-image: url('./main-background/main-background.png');
+  background-position: center;
+  background-size: cover;
 }
 * {
   box-sizing: border-box;

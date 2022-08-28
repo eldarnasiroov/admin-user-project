@@ -5,16 +5,15 @@ import "./UserError.css";
 
 const UserError: React.FC = () => {
   return (
-    <div>
-
-    <Space direction="vertical">
-      <div className="user_error_container">
-        <h1>USER ACCESS DENIED</h1>
-      </div>
-      <Link to="/user">
-        <Button type="primary">Log In</Button>
-      </Link>
-    </Space>
+    <div className="user_error_wrapper">
+      <Space direction="vertical">
+        <div className="user_error_container">
+          <h1>USER ACCESS DENIED</h1>
+        </div>
+        <Link to="/user">
+          <Button type="primary">Log In</Button>
+        </Link>
+      </Space>
     </div>
   );
 };

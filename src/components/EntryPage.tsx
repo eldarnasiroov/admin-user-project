@@ -5,13 +5,15 @@ import './EntryPage.css'
 
 const EntryPage: React.FC = () => {
   return (
-    <div className="entry_page_container">
-        <Link to={"/admin"}>
-          <Button type="primary">Login as Administrator</Button>
-        </Link>
-        <Link to={"/user"}>
-          <Button type="primary">Login as User</Button>
-        </Link>
+    <div className="entry_page_wrapper">
+      <div className="entry_page_container">
+          <Link to={"/admin"}>
+            <Button style={{width: '190px'}} type="primary">Login as Administrator</Button>
+          </Link>
+          <Link to={"/user"}>
+            <Button style={{width: '190px'}} type="primary">Login as User</Button>
+          </Link>
+      </div>
     </div>
   );
 };

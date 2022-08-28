@@ -4,9 +4,9 @@ import "./AdminError.css";
 
 const AdminError = () => {
   return (
-    <div>
+    <div className="admin_error_wrapper">
       <Space direction="vertical">
-        <div className="user_error_container">
+        <div className="admin_error_container">
           <h1>ADMIN ACCESS DENIED</h1>
         </div>
         <Link to="/admin">

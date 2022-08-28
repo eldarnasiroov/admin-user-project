@@ -28,15 +28,15 @@ const AdminProductsCardsContainer = () => {
       );
 
     return (
-        <div className='all_menu_container'>
-            <div className="menu_iscription_container">
-                <h1 className="menu_iscription">SEARCH</h1> 
+        <div className='admin_all_menu_container'>
+            <div className="admin_menu_iscription_container">
+                <h1 className="admin_menu_iscription">SEARCH</h1> 
             </div>
-            <div className='search_input'>
+            <div className='admin_search_input'>
                 <Input onChange={(e) => setSearchingProduct(e.target.value)} addonAfter={selectAfter} defaultValue={searchingProduct} />
             </div>
             <AdminAddProduct />
-            <div className='all_menu_products_container'>
+            <div className='admin_all_menu_products_container'>
                 {menu.map(prod => <AdminProductCard key={uniqid()} product={prod} />)}
             </div>
         </div>

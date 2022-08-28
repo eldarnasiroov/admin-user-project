@@ -8,8 +8,8 @@
   align-items: center;
   justify-content: space-between;
 }
-.user_user_header {
-  width: 100%;
+.user_header {
+  width: 1250px;
   height: 80px;
   background-color: rgb(245, 235, 220);
   position: fixed;

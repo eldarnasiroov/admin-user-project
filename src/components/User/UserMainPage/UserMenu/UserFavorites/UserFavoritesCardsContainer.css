@@ -1,4 +1,11 @@
-.user_menu_products_container {
+.user_favorites_all_menu_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user_favorites_menu_products_container {
+  margin-top: 20px;
     padding: 0 30px;
     width: 100%;
     display: flex;
@@ -6,3 +13,18 @@
     flex-wrap: wrap;
     gap: 20px;
 }
+.user_menu_iscription_container {
+    width: 100%;
+    height: 200px;
+    background-color: rgb(80, 35, 20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .user_menu_iscription {
+    font-size: 4em;
+    margin-top: 80px;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'DynaPuff', cursive;
+  }

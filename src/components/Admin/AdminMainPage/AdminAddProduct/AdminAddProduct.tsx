@@ -1,9 +1,9 @@
 import { useAppDispatch, useAppSelector } from '../../../../hook';
 import './AdminAddProduct.css';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button, Dropdown, Input, Menu, message, Modal, Space } from 'antd';
 import { IMenu } from '../../../../features/types/userTypes';
-import { DownOutlined, FileAddOutlined, UserOutlined } from '@ant-design/icons';
+import { DownOutlined, FileAddOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { addProduct } from '../../../../features/menuSlice';
 
@@ -20,50 +20,50 @@ const AdminAddProduct = () => {
         setIsModalVisible(true);
       };
     
-      const handleOk = () => {
-        if(imageSource && newProductName && newProductPrice && newProductCategory){
-            const newProduct: IMenu = {
-                id: lastProduct.id + 1,
-                name: newProductName,
-                price: Number(newProductPrice),
-                favorite: false,
-                category: newProductCategory,
-                img: imageSource
-            };
+    const handleOk = () => {
+      if(imageSource && newProductName && newProductPrice && newProductCategory){
+          const newProduct: IMenu = {
+              id: lastProduct.id + 1,
+              name: newProductName,
+              price: Number(newProductPrice),
+              favorite: false,
+              category: newProductCategory,
+              img: imageSource
+          };
     
-            dispatch(addProduct(newProduct));
-            setIsModalVisible(false);
-            message.success(`${newProductName} успешно добавлен!`);
-        } else {
-            message.error('Произошла ошибка. Проверьте вводимые данные.');
-        }
-      };
+          dispatch(addProduct(newProduct));
+          setIsModalVisible(false);
+          message.success(`${newProductName} успешно добавлен!`);
+      } else {
+          message.error('Произошла ошибка. Проверьте вводимые данные.');
+      }
+    };
     
       const handleCancel = () => {
         setIsModalVisible(false);
       };
 
-      const fileUploadHandler = (input: any):any => {
+      const fileUploadHandler = (input: any): any => {
         let file = input.target.files[0];
-        setImageSource(URL.createObjectURL(file))
+        setImageSource(URL.createObjectURL(file));
       };
-      
-      const handleMenuClick: MenuProps['onClick'] = e => {
-        switch(e.key) {
-            case '1': 
-            setNewProductCategory('burgers');
+
+      const handleMenuClick: MenuProps["onClick"] = (e) => {
+        switch (e.key) {
+          case "1":
+            setNewProductCategory("burgers");
             break;
 
-            case '2': 
-            setNewProductCategory('drinks');
+          case "2":
+            setNewProductCategory("drinks");
             break;
 
-            case '3': 
-            setNewProductCategory('snacks');
+          case "3":
+            setNewProductCategory("snacks");
             break;
 
-            case '4': 
-            setNewProductCategory('deserts');
+          case "4":
+            setNewProductCategory("deserts");
             break;
         }
       };

@@ -19,17 +19,17 @@ const dispatch = useAppDispatch();
     <Menu
       items={[
         {
-          label: <Link to="favorites">Favorites</Link>,
+          label: <Link to="favorites">Избранное</Link>,
           key: '1',
           icon: <HeartOutlined />,
         },
         {
-          label: <Link to="cart">Cart</Link>,
+          label: <Link to="cart">Корзина</Link>,
           key: '2',
           icon: <ShoppingCartOutlined />,
         },
         {
-          label: <Link onClick={() => {dispatch(userLogOut())}} to="/user">Log Out</Link>,
+          label: <Link onClick={() => {dispatch(userLogOut())}} to="/user">Выйти</Link>,
           key: '3',
           icon: <LogoutOutlined />,
         },

@@ -4,7 +4,7 @@ import {
   EyeTwoTone,
   InfoCircleOutlined,
 } from "@ant-design/icons";
-import { Button, Input, Space, Tooltip, Typography } from "antd";
+import { Button, Input, message, Space, Tooltip, Typography } from "antd";
 import { Link } from "react-router-dom";
 import './CreateUserAccount.css';
 import { useAppDispatch } from "../../../hook";
@@ -17,16 +17,22 @@ const CreateUserAccount: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [verificationPassword, setVerificationPassword] = useState('');
+  const [redirectPath, setRedirectPath] = useState('/user');
 
   const userRegistrationHandler = () => {
-    const userData = {
-      firstName,
-      lastName,
-      username,
-      password,
-      verificationPassword
+    if (firstName && lastName && username && password && verificationPassword) {
+      const userData = {
+        firstName,
+        lastName,
+        username,
+        password,
+        verificationPassword
+      }
+      dispatch(userRegistration(userData));
+    } else {
+      setRedirectPath('/user/create-account')
+      message.error('Please fill in all required fields');
     }
-    dispatch(userRegistration(userData));
   }
 
   return (
@@ -84,7 +90,7 @@ const CreateUserAccount: React.FC = () => {
           }
         />
         <Space>
-          <Link to="/user">
+          <Link to={redirectPath}>
             <Button onClick={userRegistrationHandler} type="primary">Sign Up</Button>
           </Link>
           <Link to="/user">

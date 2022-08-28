@@ -17,7 +17,6 @@ const UserCartCardsContainer = () => {
                 <div className='user_order_info_item'>Sum</div>
             </div>
             <div className='user_cart_cards_container'>
-                {/* {cart?.map(prod => <UserCart key={uniqid()} product={prod} />)} */}
                 {cart?.length ? cart?.map(prod => <UserCart key={uniqid()} product={prod} />) : <UserEmptyContainer />}
             </div>
             <div className='user_total_price_in_cart'>

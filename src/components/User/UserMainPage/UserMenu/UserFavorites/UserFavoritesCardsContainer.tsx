@@ -9,11 +9,11 @@ const UserFavoritesCardsContainer = () => {
     const favorites = useAppSelector(state => state.user.usersData.find(user => user.permission)?.favorites);
 
     return (
-        <div className='user_all_menu_container'>
+        <div className='user_favorites_all_menu_container'>
             <div className="user_menu_iscription_container">
-                <h1 className="menu_iscription">FAVORITES</h1> 
+                <h1 className="user_menu_iscription">FAVORITES</h1> 
             </div>
-            <div className='user_menu_products_container'>
+            <div className='user_favorites_menu_products_container'>
                 {favorites?.length ? favorites?.map(prod => <UserProductCard key={uniqid()} product={prod} />) : <UserEmptyContainer />}
             </div>
         </div>
