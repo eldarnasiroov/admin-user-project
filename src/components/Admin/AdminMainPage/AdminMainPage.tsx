@@ -1,7 +1,7 @@
-import { Dropdown, Menu, Drawer, Modal  } from "antd";
+import { Dropdown, Menu, Drawer  } from "antd";
 import { Link, Route, Routes } from "react-router-dom";
 import { useAppDispatch } from "../../../hook";
-import { ShoppingCartOutlined, LogoutOutlined, HeartOutlined, UserOutlined } from '@ant-design/icons';
+import {  LogoutOutlined, UserOutlined } from '@ant-design/icons';
 import AdminProductsCardsContainer from "./AdminProducts/AdminProductsCardsContainer/AdminProductsCardsContainer";
 import { adminLogout } from "../../../features/adminDataSlice";
 import './AdminMainPage.css';
@@ -15,7 +15,7 @@ const dispatch = useAppDispatch();
     <Menu
       items={[
         {
-          label: <Link onClick={() => dispatch(adminLogout())} to="/admin">Log Out</Link>,
+          label: <Link onClick={() => dispatch(adminLogout())} to="/admin">Выйти</Link>,
           key: '3',
           icon: <LogoutOutlined />,
         },
@@ -44,7 +44,7 @@ const dispatch = useAppDispatch();
         <Drawer title="Admin Panel" placement="left" onClose={onClose} visible={visible}>
             <p>Some contents...</p>
         </Drawer>
-        <Link className="burger_king_logo" to='/admin/main-page'>
+        <Link className="admin_burger_king_logo" to='/admin/main-page'>
           <img src="https://seeklogo.com/images/B/burger-king-new-2021-logo-F43BDE45C7-seeklogo.com.png" alt="bk-logo" width={55} height={55} />
         </Link>
         <Link to='profile' className="zaart" >

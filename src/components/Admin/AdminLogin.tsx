@@ -26,15 +26,15 @@ const AdminLogin: React.FC = () => {
     <div className="admin_login_container">
       <Space direction="vertical">
         <Typography>
-            <Typography.Title level={5}>Administrator</Typography.Title>
+            <Typography.Title level={5}>Администратор</Typography.Title>
         </Typography>
         <Input
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          placeholder="Username"
+          placeholder="Имя пользователя"
           prefix={<UserOutlined className="site-form-item-icon" />}
           suffix={
-            <Tooltip title="Enter your username">
+            <Tooltip title="Введите имя пользователя">
               <InfoCircleOutlined style={{ color: "rgba(0,0,0,.45)" }} />
             </Tooltip>
           }
@@ -42,17 +42,17 @@ const AdminLogin: React.FC = () => {
         <Input.Password
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
+          placeholder="Пароль"
           iconRender={(visible) =>
             visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
           }
         />
         <Space>
           <Link onClick={adminLoginHandler} to='/admin/main-page'>
-            <Button type="primary">Log In</Button>
+            <Button type="primary">Войти</Button>
           </Link>
           <Link to="/">
-            <Button>Back</Button>
+            <Button>Назад</Button>
           </Link>
         </Space>
       </Space>

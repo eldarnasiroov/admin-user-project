@@ -28,15 +28,15 @@ const UserLogin: React.FC = () => {
     <div className="user_login_container">
       <Space direction="vertical">
         <Typography>
-          <Typography.Title level={4}>User</Typography.Title>
+          <Typography.Title level={4}>Пользователь</Typography.Title>
         </Typography>
         <Input
           onChange={(e) => {setUsername(e.target.value)}}
           value={username}
-          placeholder="Username"
+          placeholder="Имя пользователя"
           prefix={<UserOutlined className="site-form-item-icon" />}
           suffix={
-            <Tooltip title="Enter your username">
+            <Tooltip title="Введите имя пользователя">
               <InfoCircleOutlined style={{ color: "rgba(0,0,0,.45)" }} />
             </Tooltip>
           }
@@ -44,22 +44,22 @@ const UserLogin: React.FC = () => {
         <Input.Password
           onChange={(e) => {setPassword(e.target.value)}}
           value={password}
-          placeholder="Password"
+          placeholder="Пароль"
           iconRender={(visible) =>
             visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
           }
         />
         <Link to='main-page'>
-          <Button onClick={userLoginHandler} type="primary">Log In</Button>
+          <Button onClick={userLoginHandler} type="primary">Вход</Button>
         </Link>
         <div className="user_separator"></div>
-        <span>Don't have an account?</span>
+        <span>Ещё не зарегистрированы?</span>
         <Space>
           <Link to="create-account">
-            <Button type="primary">Create new account</Button>
+            <Button type="primary">Создать новый аккаунт</Button>
           </Link>
           <Link to="/">
-            <Button>Back</Button>
+            <Button>Назад</Button>
           </Link>
         </Space>
       </Space>

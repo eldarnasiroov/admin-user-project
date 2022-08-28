@@ -17,10 +17,10 @@ const CreateUserAccount: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [verificationPassword, setVerificationPassword] = useState('');
-  const [redirectPath, setRedirectPath] = useState('/user');
 
   const userRegistrationHandler = () => {
     if (firstName && lastName && username && password && verificationPassword) {
+      
       const userData = {
         firstName,
         lastName,
@@ -30,24 +30,23 @@ const CreateUserAccount: React.FC = () => {
       }
       dispatch(userRegistration(userData));
     } else {
-      setRedirectPath('/user/create-account')
-      message.error('Please fill in all required fields');
+      message.error('Пожалуйста, заполните все необходимые поля');
     }
   }
 
   return (
     <div className="create_user_container">
       <Typography>
-        <Typography.Title>Create User Account</Typography.Title>
+        <Typography.Title>Создание аккаунта Пользователя</Typography.Title>
       </Typography>
       <Space direction="vertical">
         <Space>
           <Input
             onChange={(e) => {setFirstName(e.target.value)}}
             value={firstName}
-            placeholder="First name"
+            placeholder="Имя"
             suffix={
-              <Tooltip title={"Name must contain only letters"}>
+              <Tooltip title={"Имя должно содержать только буквы"}>
                 <InfoCircleOutlined style={{ color: "rgba(0,0,0,.45)" }} />
               </Tooltip>
             }
@@ -55,9 +54,9 @@ const CreateUserAccount: React.FC = () => {
           <Input
             onChange={(e) => {setLastName(e.target.value)}}
             value={lastName}
-            placeholder="Last name"
+            placeholder="Фамилия"
             suffix={
-              <Tooltip title={"Surname must contain only letters"}>
+              <Tooltip title={"Фамилия должна содержать только буквы"}>
                 <InfoCircleOutlined style={{ color: "rgba(0,0,0,.45)" }} />
               </Tooltip>
             }
@@ -66,7 +65,7 @@ const CreateUserAccount: React.FC = () => {
           <Input
             onChange={(e) => {setUsername(e.target.value)}}
             value={username}
-            placeholder="Username"
+            placeholder="Имя пользователя"
             suffix={
               <Tooltip title={""}>
                 <InfoCircleOutlined style={{ color: "rgba(0,0,0,.45)" }} />
@@ -76,7 +75,7 @@ const CreateUserAccount: React.FC = () => {
         <Input.Password
           onChange={(e) => {setPassword(e.target.value)}}
           value={password}
-          placeholder="New password"
+          placeholder="Новый пароль"
           iconRender={(visible) =>
             visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
           }
@@ -84,17 +83,17 @@ const CreateUserAccount: React.FC = () => {
         <Input.Password
           onChange={(e) => {setVerificationPassword(e.target.value)}}
           value={verificationPassword}
-          placeholder="Confirm password"
+          placeholder="Повторите пароль"
           iconRender={(visible) =>
             visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
           }
         />
         <Space>
-          <Link to={redirectPath}>
-            <Button onClick={userRegistrationHandler} type="primary">Sign Up</Button>
+          <Link to='/user'>
+            <Button onClick={userRegistrationHandler} type="primary">Регистрация</Button>
           </Link>
           <Link to="/user">
-            <Button>Back</Button>
+            <Button>Назад</Button>
           </Link>
         </Space>
       </Space>

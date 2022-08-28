@@ -30,7 +30,7 @@ const AdminProductsCardsContainer = () => {
     return (
         <div className='admin_all_menu_container'>
             <div className="admin_menu_iscription_container">
-                <h1 className="admin_menu_iscription">SEARCH</h1> 
+                <h1 className="admin_menu_iscription">Поиск</h1> 
             </div>
             <div className='admin_search_input'>
                 <Input onChange={(e) => setSearchingProduct(e.target.value)} addonAfter={selectAfter} defaultValue={searchingProduct} />

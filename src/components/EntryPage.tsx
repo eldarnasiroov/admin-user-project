@@ -8,10 +8,10 @@ const EntryPage: React.FC = () => {
     <div className="entry_page_wrapper">
       <div className="entry_page_container">
           <Link to={"/admin"}>
-            <Button style={{width: '190px'}} type="primary">Login as Administrator</Button>
+            <Button style={{width: '200px'}} type="primary">Войти как Администратор</Button>
           </Link>
           <Link to={"/user"}>
-            <Button style={{width: '190px'}} type="primary">Login as User</Button>
+            <Button style={{width: '200px'}} type="primary">Войти как Пользователь</Button>
           </Link>
       </div>
     </div>
