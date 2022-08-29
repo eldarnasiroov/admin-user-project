@@ -20,7 +20,7 @@ const UserLogin: React.FC = () => {
     const loginData = {
       username,
       password
-    }
+    };
     dispatch(userLogin(loginData));
   }
 
@@ -49,8 +49,8 @@ const UserLogin: React.FC = () => {
             visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
           }
         />
-        <Link to='/user/main-page'>
-          <Button onClick={userLoginHandler} type="primary">Вход</Button>
+        <Link onClick={userLoginHandler} to='/user/main-page'>
+          <Button type="primary">Вход</Button>
         </Link>
         <div className="user_separator"></div>
         <span>Ещё не зарегистрированы?</span>

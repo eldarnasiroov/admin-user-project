@@ -27,3 +27,10 @@
   display: flex;
   gap: 10px;
 }
+.user_profile_change_input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}

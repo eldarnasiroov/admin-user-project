@@ -52,7 +52,7 @@ const AdminLogin: React.FC = () => {
             <Button type="primary">Войти</Button>
           </Link>
           <Link to="/">
-            <Button>Назад</Button>
+            <Button>На главную</Button>
           </Link>
         </Space>
       </Space>

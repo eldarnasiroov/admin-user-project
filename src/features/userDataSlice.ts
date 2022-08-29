@@ -104,10 +104,19 @@ const userDataSlice = createSlice({
         }
         return user;
       });
+    },
+    // CHANGE PASSWORD
+    changePassword: (state, action: PayloadAction<{newPassword: string | undefined}>) => {
+      state.usersData.map(user => {
+        if (user.permission && action.payload.newPassword) {
+          user.password = action.payload.newPassword;
+        }
+        return user;
+      });
     }
     
   },
 });
 
 export default userDataSlice.reducer;
-export const { userRegistration, userLogin, userLogOut, userAddToCart, userAddToFavorites, changeUsernamee } = userDataSlice.actions;
+export const { userRegistration, userLogin, userLogOut, userAddToCart, userAddToFavorites, changeUsernamee, changePassword } = userDataSlice.actions;
