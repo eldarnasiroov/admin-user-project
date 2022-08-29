@@ -95,11 +95,19 @@ const userDataSlice = createSlice({
         }
         return state;
       });
-      
+    },
+    // CHANGE USERNAME
+    changeUsernamee: (state, action: PayloadAction<{newUsername: string | undefined}>) => {
+      state.usersData.map(user => {
+        if (user.permission && action.payload.newUsername) {
+          user.username = action.payload.newUsername;
+        }
+        return user;
+      });
     }
     
   },
 });
 
 export default userDataSlice.reducer;
-export const { userRegistration, userLogin, userLogOut, userAddToCart, userAddToFavorites } = userDataSlice.actions;
+export const { userRegistration, userLogin, userLogOut, userAddToCart, userAddToFavorites, changeUsernamee } = userDataSlice.actions;
